@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+        table {
+
+            border-collapse: collapse;
+
+            width: 100%;
+
+        }
+
+        th {
+
+            background-color: #00a651;
+
+            color: white;
+
+            padding: 10px;
+
+            border: 1px solid #ddd;
+
+        }
+
+        td {
+
+            padding: 10px;
+
+            border: 1px solid #ddd;
+
+        }
+
+        tr:nth-child(even) {
+
+            background-color: #f9f9f9;
+
+        }
+
+        /* 設定 Popover 的樣式（小視窗出現的樣子） */
+
+        [popover] {
+
+            border: 1px solid #ccc;
+
+            padding: 20px;
+
+            background-color: white;
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+        }
+</style>
+</head>
+<body>
+<h2>資工選課表</h2>
+<table id="csie">
+<tr>
+<th>開課單位</th>
+<th>課程名稱</th>
+<th>授課教師</th>
+</tr>
+<tr>
+<td>資工系</td>
+<td><a href="https://catalog.cgu.edu.tw/coursedata?sectionid=A2337" target="_blank" popovertarget="course-detail" style="color: blue; text-decoration: underline; cursor: pointer;">物件導向軟體設計</a></td>
+<td>黃崇源</td>
+</tr>
+<tr>
+<td>資工系</td>
+<td>計算機網路實驗</td>
+<td>李春良</td>
+</tr>
+<tr>
+<td>資工系</td>
+<td>作業系統實務</td>
+<td>張哲維</td>
+</tr>
+<tr>
+<td>資工系</td>
+<td>生物統計</td>
+<td>陳光武</td>
+</tr>
+<tr>
+<td>資工系</td>
+<td>通訊系統</td>
+<td>陳仁暉</td>
+</tr>
+<tr>
+<td>資工系</td>
+<td>軟硬體專題(2)</td>
+<td>魏志達</td>
+</tr>
+</table>
+<br>
+<button onclick="changeResult()">Change</button>
+<div id="course-detail" popover>
+<strong>課程詳細資料</strong><br>
+
+        學年/學期：114/2<br>
+
+        開課單位：資工系<br>
+
+        開課序號：A2337<br>
+
+        上課時間地點：星期五 2(09:10)~4(12:00) 資工系電腦教室2
+</div>
+<script>
+
+        function changeResult() {
+
+            // 找到 ID 為 csie 的表格
+
+            var myTable = document.getElementById("csie");
+
+            // rows[1] 代表第二列（也就是第一門課），cells[2] 代表第三個格子（老師名字）
+
+            myTable.rows[1].cells[2].innerHTML = "李春良";
+
+        }
+</script>
+</body>
+</html>
+ 
